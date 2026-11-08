@@ -1,34 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="512" height="512">
   <defs>
-    <!-- Sfumatura superiore sinistra (Menta Etereo #B8DEE0 -> Blu Petrolio #0F5257) -->
-    <linearGradient id="grad-left-inner" x1="18%" y1="18%" x2="68%" y2="28%">
-      <stop offset="0%" stop-color="#3E7B80" />
-      <stop offset="45%" stop-color="#9ACBD0" />
-      <stop offset="100%" stop-color="#B8DEE0" />
+    <!-- Sfumatura cuore superiore sinistra (Orchidea #e27fdb -> Magenta #a32f96 -> Rosso #cd2727) -->
+    <linearGradient id="grad-heart-left" x1="18%" y1="18%" x2="68%" y2="28%">
+      <stop offset="0%" stop-color="#cd2727" />
+      <stop offset="50%" stop-color="#a32f96" />
+      <stop offset="100%" stop-color="#e27fdb" />
     </linearGradient>
 
-    <!-- Sfumatura superiore destra (Menta Etereo #B8DEE0) -->
-    <linearGradient id="grad-right-top" x1="53%" y1="10%" x2="96%" y2="35%">
-      <stop offset="0%" stop-color="#9ACBD0" />
-      <stop offset="60%" stop-color="#B8DEE0" />
-      <stop offset="100%" stop-color="#B8DEE0" />
+    <!-- Sfumatura cuore superiore destra (Magenta #a32f96 -> Orchidea #e27fdb) -->
+    <linearGradient id="grad-heart-right" x1="53%" y1="10%" x2="96%" y2="35%">
+      <stop offset="0%" stop-color="#a32f96" />
+      <stop offset="100%" stop-color="#e27fdb" />
     </linearGradient>
   </defs>
 
-  <!-- ================= CORNICE A CUORE (NASTRO BICOLORE) ================= -->
+  <!-- ================= CORNICE A CUORE ================= -->
   <g id="heart-ribbon">
-    <path d="M 122,295 C 165,165 265,112 375,112 C 475,112 575,195 698,300 L 580,300 C 480,205 405,152 325,152 C 235,152 162,208 122,295 Z" fill="url(#grad-left-inner)" />
-    <path d="M 548,100 C 618,52 715,52 795,85 C 895,126 958,225 975,355 C 948,235 865,142 752,135 C 690,131 642,150 612,174 L 548,100 Z" fill="url(#grad-right-top)" />
-    <path d="M 612,174 C 668,132 755,132 825,190 C 800,152 745,125 685,132 C 648,136 625,155 612,174 Z" fill="#0A3C40" />
-    <path d="M 512,960 C 310,960 112,735 58,505 C 18,335 55,165 175,92 C 260,40 375,45 478,108 C 545,148 625,222 698,300 L 668,300 C 585,212 495,135 405,115 C 275,85 162,158 122,295 C 85,420 118,582 215,715 C 305,838 418,900 512,900 C 606,900 719,838 809,715 C 906,582 939,420 902,295 C 868,180 780,128 685,142 C 655,146 630,158 612,174 C 665,125 755,115 835,165 C 945,232 995,375 955,535 C 898,755 714,960 512,960 Z" fill="#0F5257" />
-    <path d="M 105,638 C 195,815 358,960 512,960 C 555,960 598,948 640,925 C 585,938 535,935 485,915 C 335,865 192,762 105,638 Z" fill="#0A3C40" />
-    <path d="M 885,685 C 815,805 685,915 545,955 C 695,942 825,815 885,685 Z" fill="#0A3C40" />
+    <path d="M 122,295 C 165,165 265,112 375,112 C 475,112 575,195 698,300 L 580,300 C 480,205 405,152 325,152 C 235,152 162,208 122,295 Z" fill="url(#grad-heart-left)" />
+    <path d="M 548,100 C 618,52 715,52 795,85 C 895,126 958,225 975,355 C 948,235 865,142 752,135 C 690,131 642,150 612,174 L 548,100 Z" fill="url(#grad-heart-right)" />
+    <path d="M 612,174 C 668,132 755,132 825,190 C 800,152 745,125 685,132 C 648,136 625,155 612,174 Z" fill="#801010" />
+    <path d="M 512,960 C 310,960 112,735 58,505 C 18,335 55,165 175,92 C 260,40 375,45 478,108 C 545,148 625,222 698,300 L 668,300 C 585,212 495,135 405,115 C 275,85 162,158 122,295 C 85,420 118,582 215,715 C 305,838 418,900 512,900 C 606,900 719,838 809,715 C 906,582 939,420 902,295 C 868,180 780,128 685,142 C 655,146 630,158 612,174 C 665,125 755,115 835,165 C 945,232 995,375 955,535 C 898,755 714,960 512,960 Z" fill="#cd2727" />
+    <path d="M 105,638 C 195,815 358,960 512,960 C 555,960 598,948 640,925 C 585,938 535,935 485,915 C 335,865 192,762 105,638 Z" fill="#801010" />
+    <path d="M 885,685 C 815,805 685,915 545,955 C 695,942 825,815 885,685 Z" fill="#801010" />
   </g>
 
   <!-- ================= TRACCIATO ECG CENTRALE ================= -->
   <path d="M 215,525 L 345,525 L 388,465 L 432,575 L 498,310 L 568,685 L 626,445 L 668,525 L 805,525"
         fill="none"
-        stroke="#0F5257"
+        stroke="#cd2727"
         stroke-width="54"
         stroke-linecap="round"
         stroke-linejoin="round" />

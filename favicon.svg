@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- Opaque background fill so Safari clips the icon seamlessly -->
-  <rect width="1024" height="1024" fill="#0F5257"/>
-  <rect x="32" y="32" width="960" height="960" rx="200" fill="none" stroke="#1B8A93" stroke-width="24"/>
+  <!-- Sfondo pieno solido per Safari e iOS (No trasparenza esterna) -->
+  <rect width="1024" height="1024" fill="#cd2727"/>
+  <rect x="32" y="32" width="960" height="960" rx="200" fill="none" stroke="#e63939" stroke-width="24"/>
   <g transform="translate(112, 112) scale(0.78)">
     <defs>
       <linearGradient id="grad-mint" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stop-color="#FFFFFF"/>
-        <stop offset="60%" stop-color="#B8DEE0"/>
-        <stop offset="100%" stop-color="#9ACBD0"/>
+        <stop offset="60%" stop-color="#e27fdb"/>
+        <stop offset="100%" stop-color="#a32f96"/>
       </linearGradient>
     </defs>
-    <!-- Heart Ribbon -->
+    <!-- Cornice Cuore -->
     <path d="M 122,295 C 165,165 265,112 375,112 C 475,112 575,195 698,300 L 580,300 C 480,205 405,152 325,152 C 235,152 162,208 122,295 Z" fill="url(#grad-mint)" />
     <path d="M 548,100 C 618,52 715,52 795,85 C 895,126 958,225 975,355 C 948,235 865,142 752,135 C 690,131 642,150 612,174 L 548,100 Z" fill="url(#grad-mint)" />
-    <path d="M 612,174 C 668,132 755,132 825,190 C 800,152 745,125 685,132 C 648,136 625,155 612,174 Z" fill="#0A3C40" opacity="0.6"/>
+    <path d="M 612,174 C 668,132 755,132 825,190 C 800,152 745,125 685,132 C 648,136 625,155 612,174 Z" fill="#801010" opacity="0.6"/>
     <path d="M 512,960 C 310,960 112,735 58,505 C 18,335 55,165 175,92 C 260,40 375,45 478,108 C 545,148 625,222 698,300 L 668,300 C 585,212 495,135 405,115 C 275,85 162,158 122,295 C 85,420 118,582 215,715 C 305,838 418,900 512,900 C 606,900 719,838 809,715 C 906,582 939,420 902,295 C 868,180 780,128 685,142 C 655,146 630,158 612,174 C 665,125 755,115 835,165 C 945,232 995,375 955,535 C 898,755 714,960 512,960 Z" fill="#FFFFFF" />
-    <!-- ECG Pulse Wave in Pure White -->
+    <!-- Onda ECG centrale in bianco puro -->
     <path d="M 215,525 L 345,525 L 388,465 L 432,575 L 498,310 L 568,685 L 626,445 L 668,525 L 805,525"
           fill="none"
           stroke="#FFFFFF"

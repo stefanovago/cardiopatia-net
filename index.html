@@ -26,20 +26,20 @@
   <!-- Nome suggerito per Preferiti / Segnalibri -->
   <meta name="apple-mobile-web-app-title" content="Cardiopatia.net">
   <meta name="application-name" content="Cardiopatia.net">
-  <meta name="theme-color" content="#0F5257">
+  <meta name="theme-color" content="#cd2727">
 
   <!-- Favicon e Icone Multipiattaforma (Google Search, Safari, iOS, Chrome, Firefox, Android) -->
-  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2">
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=2">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
-  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-precomposed.png?v=2">
-  <link rel="mask-icon" href="/favicon.svg?v=2" color="#0F5257">
-  <link rel="manifest" href="/site.webmanifest?v=2">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=3">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=3">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-precomposed.png?v=3">
+  <link rel="mask-icon" href="/favicon.svg?v=3" color="#cd2727">
+  <link rel="manifest" href="/site.webmanifest?v=3">
 
   <!-- Open Graph / Social / WhatsApp Preview -->
   <meta property="og:type" content="website">
@@ -259,25 +259,37 @@
 
   <style>
     /* =====================================================================
-       1. VARIABILI & PALETTE "PETROLIO & SABBIA" (COORDINATA CON STEFANOVAGO.COM)
+       1. VARIABILI & PALETTE "THE REAL HEART" (ROSSO CARDIOPATIA & BLU CLINICO)
        ===================================================================== */
     :root {
-      --bg: #F9F8F5;
+      --bg: #FBFBFA;
       --surf: #FFFFFF;
-      --surf2: #F2EFE9;
-      --surf-alt: #EAE6DE;
+      --surf2: #F4F1EA;
+      --surf-alt: #ECE7DD;
 
-      --ink: #1C2526;
-      --ink2: #4A585A;
-      --ink3: #768587;
+      --ink: #1C2426;
+      --ink2: #4A5658;
+      --ink3: #758385;
 
-      --line: #E0DDD5;
-      --line2: #CFCBC0;
+      --line: #E2DFD7;
+      --line2: #D1CDC4;
 
-      --acc: #0F5257;
-      --acc-hover: #0A3C40;
-      --acc-soft: #EBF6F7;
-      --acc-border: #B8DEE0;
+      /* Palette "The Real Heart" */
+      --acc: #cd2727;
+      --acc-hover: #b31e1e;
+      --acc-soft: #FDF2F2;
+      --acc-border: #F7D0D0;
+
+      --c-blue: #007bbc;
+      --c-blue-soft: #EFF7FC;
+      --c-blue-border: #BCE0F5;
+
+      --c-violet: #6f45f2;
+      --c-violet-soft: #F3EFFF;
+      --c-violet-border: #D7C7FC;
+
+      --c-magenta: #a32f96;
+      --c-lilac: #e27fdb;
 
       --warn-bg: #FDF4F3;
       --warn-border: #F2C6C2;
@@ -292,22 +304,33 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #121819;
-        --surf: #1A2224;
-        --surf2: #222C2F;
-        --surf-alt: #283437;
+        --bg: #131719;
+        --surf: #1B2124;
+        --surf2: #232B2E;
+        --surf-alt: #2B3438;
 
         --ink: #F1F4F4;
         --ink2: #A6B4B6;
         --ink3: #6E7E80;
 
-        --line: #2B373A;
-        --line2: #39484C;
+        --line: #2C363A;
+        --line2: #3A464A;
 
-        --acc: #38A3A5;
-        --acc-hover: #52B6B8;
-        --acc-soft: #172E30;
-        --acc-border: #274C4F;
+        --acc: #e63939;
+        --acc-hover: #ff4d4d;
+        --acc-soft: #2D1414;
+        --acc-border: #5C1D1D;
+
+        --c-blue: #29a7e6;
+        --c-blue-soft: #122836;
+        --c-blue-border: #1C445C;
+
+        --c-violet: #8e6cf7;
+        --c-violet-soft: #23193D;
+        --c-violet-border: #44327A;
+
+        --c-magenta: #c24cb5;
+        --c-lilac: #e27fdb;
 
         --warn-bg: #2B1918;
         --warn-border: #5E2824;
@@ -479,7 +502,7 @@
       height: 9px;
       border-radius: 50%;
       background-color: var(--acc);
-      box-shadow: 0 0 0 4px rgba(15, 82, 87, 0.18);
+      box-shadow: 0 0 0 4px rgba(205, 39, 39, 0.18);
       flex-shrink: 0;
     }
     .launch-banner-link {
@@ -509,7 +532,7 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, var(--acc), var(--acc-border));
+      background: linear-gradient(90deg, #cd2727, #a32f96, #007bbc);
     }
 
     .hero-grid {
@@ -582,7 +605,7 @@
     .btn-primary {
       background-color: var(--acc);
       color: #FFFFFF;
-      box-shadow: 0 2px 6px rgba(15, 82, 87, 0.2);
+      box-shadow: 0 2px 6px rgba(205, 39, 39, 0.25);
     }
     @media (hover: hover) and (pointer: fine) {
       .btn-primary:hover {
