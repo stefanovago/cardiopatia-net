@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WF8TS7LFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4WF8TS7LFN');
+    gtag('config', 'GTM-M4N4G47M');
+  </script>
+
   <title>Cardiopatia: Cosa Significa, Sintomi, Tipi e Prevenzione | Cardiopatia.net</title>
   <meta name="description" content="Guida medica completa alle cardiopatie: cardiopatia ischemica, ipertensiva, dilatativa, valvolare e prevenzione cardiovascolare. A cura del Dott. Stefano Vago, Medico Chirurgo.">
   <meta name="keywords" content="cardiopatia, cardiopatia ischemica, cardiopatia significato, cardiopatia ipertensiva, cardiopatia dilatativa, cardiopatia sintomi, malattie del cuore, prevenzione cardiovascolare, SCAD, dissezione coronarica spontanea, cardiologia, Dott. Stefano Vago">
@@ -1561,6 +1572,28 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     })();
+
+    // Tracciamento conversioni GA4: clic dei pazienti verso stefanovago.com e contatti email
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a');
+      if (!link) return;
+      var href = link.getAttribute('href') || '';
+      if (href.indexOf('stefanovago.com') !== -1) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'lead_click_sito_personale', {
+            'event_category': 'conversion',
+            'event_label': href
+          });
+        }
+      } else if (href.indexOf('mailto:dr.stefano.vago') !== -1) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'lead_click_email', {
+            'event_category': 'conversion',
+            'event_label': href
+          });
+        }
+      }
+    });
   </script>
 </body>
 </html>
