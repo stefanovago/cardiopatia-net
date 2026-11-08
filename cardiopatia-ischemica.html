@@ -1467,21 +1467,21 @@
           </div>
         </section>
 
-        <!-- BOX CONVERSIONE FINALE / VISITA COL MEDICO -->
-        <section class="bottom-cta-box" aria-label="Contatta il Dott. Stefano Vago">
+        <!-- BOX AUTORE / CURATORE SCIENTIFICO -->
+        <section class="bottom-cta-box" aria-label="Curatore Scientifico del Portale">
           <img src="/profilo.jpg" alt="Dott. Stefano Vago" class="bottom-cta-photo" width="140" height="155" loading="lazy">
           <div>
-            <div class="b-label">Hai dubbi o necessiti di un inquadramento specialistico?</div>
+            <div class="b-label">Curatore Scientifico del Portale</div>
             <h3 class="b-title">Dott. Stefano Vago — Medico Chirurgo</h3>
             <p class="b-desc">
-              Medico in formazione specialistica in Malattie dell'Apparato Cardiovascolare presso l'Università degli Studi di Parma. Dedicato al trattamento clinico e interventistico della <strong>cardiopatia ischemica</strong>, alle <strong>dissezioni coronariche spontanee (SCAD)</strong> e all'imaging multimodale.
+              Medico in formazione specialistica in Malattie dell'Apparato Cardiovascolare presso l'Università degli Studi di Parma. Dedicato alla ricerca clinica e interventistica sulla <strong>cardiopatia ischemica</strong>, alle <strong>dissezioni coronariche spontanee (SCAD)</strong> e all'imaging multimodale.
             </p>
             <div class="b-actions">
               <a href="https://stefanovago.com/" class="btn btn-primary" rel="author">
-                Consulta il Profilo su stefanovago.com ↗
+                Profilo Scientifico su stefanovago.com ↗
               </a>
-              <a href="mailto:dr.stefano.vago@gmail.com" class="btn btn-secondary">
-                Invia una richiesta via Email
+              <a href="https://orcid.org/0009-0001-4029-5072" target="_blank" rel="noopener" class="btn btn-secondary">
+                ORCID ↗
               </a>
             </div>
           </div>
@@ -1517,7 +1517,7 @@
             Specializzando in Malattie dell'Apparato Cardiovascolare. Esperienza clinica e di ricerca sulla cardiopatia ischemica e imaging cardiaco.
           </p>
           <a href="https://stefanovago.com/" class="sa-btn" rel="author">
-            Sito Ufficiale &amp; Contatti ↗
+            Profilo su stefanovago.com ↗
           </a>
         </div>
       </aside>
@@ -1541,23 +1541,15 @@
   </main>
 
   <script>
-    // Tracciamento conversioni GA4: clic dei pazienti verso stefanovago.com e contatti email
+    // Tracciamento analitico GA4: consultazione profilo del curatore su stefanovago.com
     document.addEventListener('click', function(e) {
       var link = e.target.closest('a');
       if (!link) return;
       var href = link.getAttribute('href') || '';
       if (href.indexOf('stefanovago.com') !== -1) {
         if (typeof gtag === 'function') {
-          gtag('event', 'lead_click_sito_personale', {
-            'event_category': 'conversion',
-            'event_label': href,
-            'page_location': window.location.href
-          });
-        }
-      } else if (href.indexOf('mailto:dr.stefano.vago') !== -1) {
-        if (typeof gtag === 'function') {
-          gtag('event', 'lead_click_email', {
-            'event_category': 'conversion',
+          gtag('event', 'click_profilo_curatore', {
+            'event_category': 'navigation',
             'event_label': href,
             'page_location': window.location.href
           });
