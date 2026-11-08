@@ -1,24 +1,24 @@
 {
-  "name": "Cardiopatia.net — Portale di Informazione sulle Malattie Cardiovascolari",
+  "name": "Cardiopatia.net",
   "short_name": "Cardiopatia.net",
-  "description": "Guida medica alle patologie del cuore, cardiopatia ischemica e prevenzione cardiovascolare a cura del Dott. Stefano Vago.",
+  "description": "Informazione e Prevenzione Cardiovascolare a cura del Dott. Stefano Vago",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0F5257",
   "theme_color": "#0F5257",
   "icons": [
     {
-      "src": "favicon-192x192.png",
+      "src": "/favicon-192x192.png?v=2",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "favicon-512x512.png",
+      "src": "/favicon-512x512.png?v=2",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "apple-touch-icon.png",
+      "src": "/apple-touch-icon.png?v=2",
       "sizes": "180x180",
       "type": "image/png"
     }

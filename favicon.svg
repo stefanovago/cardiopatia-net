@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="64" height="64">
-  <rect width="1024" height="1024" rx="224" fill="#0F5257"/>
-  <rect x="28" y="28" width="968" height="968" rx="196" fill="none" stroke="#1B8A93" stroke-width="28"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Opaque background fill so Safari clips the icon seamlessly -->
+  <rect width="1024" height="1024" fill="#0F5257"/>
+  <rect x="32" y="32" width="960" height="960" rx="200" fill="none" stroke="#1B8A93" stroke-width="24"/>
   <g transform="translate(112, 112) scale(0.78)">
     <defs>
       <linearGradient id="grad-mint" x1="0%" y1="0%" x2="100%" y2="100%">
