@@ -767,6 +767,43 @@
       line-height: 1.65;
     }
 
+    /* BOX APPROFONDIMENTI CORRELATI */
+    .related-box {
+      margin-top: 28px;
+      background: var(--surf2);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .related-box-text {
+      min-width: 220px;
+      flex: 1;
+    }
+    .related-box-kicker {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--acc);
+      margin-bottom: 3px;
+    }
+    .related-box-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 3px;
+    }
+    .related-box-sub {
+      font-size: 0.84rem;
+      color: var(--ink2);
+      margin: 0;
+    }
+
     /* SIDEBAR INDICE NEL MARGINE SINISTRO (DESKTOP LARGO) */
     .sidebar-col {
       position: absolute;
@@ -1290,7 +1327,7 @@
               <li>
                 <strong>Farmaci per abbassare il colesterolo:</strong> le statine ad alta intensità, spesso affiancate a ezetimibe o a terapie innovative (come acido bempedoico, anticorpi anti-PCSK9 o inclisiran), non servono solo a "ridurre un numero" negli esami del sangue, ma spengono l'infiammazione all’interno della placca e la rendono solida e stabile.
                 <div class="target-highlight">
-                  <strong>Target Linee Guida Europee (ESC):</strong> in chi ha una malattia coronarica documentata, si raccomanda di portare il <strong>colesterolo LDL sotto i 55 mg/dL</strong> (e di ridurlo di almeno il 50% rispetto al valore iniziale).
+                  <strong>L'obiettivo del colesterolo LDL:</strong> in chi ha una malattia coronarica documentata, l'obiettivo per proteggere le arterie è portare il <strong>colesterolo LDL sotto i 55 mg/dL</strong> (e ridurlo di almeno il 50% rispetto al valore iniziale).
                 </div>
               </li>
               <li><strong>Farmaci anti-anginosi:</strong> beta-bloccanti, calcio-antagonisti, ranolazina, ivabradina, nitrati a rilascio prolungato riducono il consumo di ossigeno del cuore e dilatano le coronarie, prevenendo gli attacchi di angina. Inoltre, la <em>nitroglicerina sublinguale</em> può essere prescritta al bisogno per interrompere rapidamente un eventuale sintomo.</li>
@@ -1386,7 +1423,7 @@
           </p>
 
           <div class="callout-box">
-            <strong>I vantaggi dell'accesso dal polso (arteria radiale):</strong> eseguire la procedura passando dal polso anziché dall'inguine è oggi lo standard raccomandato dalle linee guida internazionali: riduce drasticamente il rischio di ematomi e sanguinamenti, è molto più confortevole e ti permette di alzarti dal letto e muoverti già poche ore dopo l'intervento.
+            <strong>I vantaggi dell'accesso dal polso (arteria radiale):</strong> eseguire la procedura passando dal polso anziché dall'inguine è oggi la scelta di riferimento nella quasi totalità dei casi: riduce drasticamente il rischio di ematomi e sanguinamenti, è molto più confortevole e ti permette di alzarti dal letto e muoverti già poche ore dopo l'intervento.
           </div>
 
           <h3>Cosa aspettarsi dopo l'angioplastica</h3>
@@ -1470,6 +1507,23 @@
           </div>
         </section>
 
+        <!-- BOX APPROFONDIMENTO CORRELATO -->
+        <aside class="related-box" aria-label="Guide correlate su Cardiopatia.net">
+          <div class="related-box-text">
+            <div class="related-box-kicker">Approfondisci su Cardiopatia.net</div>
+            <h3 class="related-box-title">Scompenso Cardiaco e Cardiopatia Ipertensiva</h3>
+            <p class="related-box-sub">Scopri come proteggere la forza di pompa del cuore e tenere sotto controllo la pressione arteriosa.</p>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a href="/scompenso-cardiaco" class="btn btn-secondary">
+              Scompenso Cardiaco →
+            </a>
+            <a href="/cardiopatia-ipertensiva" class="btn btn-secondary">
+              Cardiopatia Ipertensiva →
+            </a>
+          </div>
+        </aside>
+
         <!-- BOX AUTORE / CURATORE SCIENTIFICO -->
         <section class="bottom-cta-box" aria-label="Curatore Scientifico del Portale">
           <img src="/profilo.jpg" alt="Dott. Stefano Vago" class="bottom-cta-photo" width="140" height="155" loading="lazy">
@@ -1522,7 +1576,6 @@
       <div>
         <span>© Cardiopatia.net · Tutti i diritti riservati</span>
       </div>
-      <img src="/logo.svg" alt="Logo Cardiopatia.net" width="32" height="32" style="display:block; margin-top:4px;">
     </footer>
 
   </main>
