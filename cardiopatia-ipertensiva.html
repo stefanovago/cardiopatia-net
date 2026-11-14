@@ -918,62 +918,6 @@
       background: var(--surf2);
     }
 
-    /* CARD AUTORE NELLA SIDEBAR */
-    .sidebar-author {
-      background: var(--surf2);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 16px;
-    }
-    .sidebar-author-top {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .sa-photo {
-      width: 48px;
-      height: 52px;
-      border-radius: 8px;
-      object-fit: cover;
-      object-position: center 15%;
-      border: 1.5px solid var(--acc-border);
-      flex-shrink: 0;
-    }
-    .sa-name {
-      font-size: 0.92rem;
-      font-weight: 800;
-      color: var(--ink);
-      margin: 0;
-      line-height: 1.2;
-    }
-    .sa-role {
-      font-size: 0.74rem;
-      color: var(--ink2);
-      margin: 2px 0 0;
-    }
-    .sa-desc {
-      font-size: 0.79rem;
-      color: var(--ink2);
-      line-height: 1.48;
-      margin: 0 0 12px;
-    }
-    .sa-btn {
-      display: block;
-      text-align: center;
-      padding: 8px 12px;
-      border-radius: 7px;
-      background: var(--acc);
-      color: #FFFFFF;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background 0.15s ease;
-    }
-    .sa-btn:hover {
-      background: var(--acc-hover);
-    }
-
     /* BOX AUTORE A FINE ARTICOLO */
     .bottom-cta-box {
       margin-top: 28px;
@@ -1642,7 +1586,7 @@
       </article>
 
       <!-- SIDEBAR STICKY CON INDICE (DESKTOP) -->
-      <aside class="sidebar-col" aria-label="Indice e Riferimento Medico">
+      <aside class="sidebar-col" aria-label="Indice della guida">
         <nav class="toc-card" aria-label="Indice della guida">
           <div class="toc-title">Indice dei contenuti</div>
           <ul class="toc-list">
@@ -1657,22 +1601,6 @@
             <li><a href="#faq" class="toc-link">9. Domande frequenti (FAQ)</a></li>
           </ul>
         </nav>
-
-        <div class="sidebar-author">
-          <div class="sidebar-author-top">
-            <img src="/profilo.jpg" alt="Dott. Stefano Vago" class="sa-photo" width="48" height="52">
-            <div>
-              <div class="sa-name">Dott. Stefano Vago</div>
-              <div class="sa-role">Medico Chirurgo</div>
-            </div>
-          </div>
-          <p class="sa-desc">
-            Specializzando in Malattie dell'Apparato Cardiovascolare. Esperienza clinica e di ricerca su cardiopatie, imaging cardiaco e prevenzione cardiovascolare.
-          </p>
-          <a href="https://stefanovago.com/" class="sa-btn" rel="author">
-            Profilo su stefanovago.com ↗
-          </a>
-        </div>
       </aside>
 
     </div>
