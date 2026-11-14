@@ -106,6 +106,9 @@
           },
           {
             "@id": "https://cardiopatia.net/#condition-ischemica"
+          },
+          {
+            "@id": "https://cardiopatia.net/#condition-ipertensiva"
           }
         ]
       },
@@ -165,6 +168,22 @@
         "code": {
           "@type": "MedicalCode",
           "code": "I20-I25",
+          "codingSystem": "ICD-10"
+        }
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": "https://cardiopatia.net/#condition-ipertensiva",
+        "name": "Cardiopatia Ipertensiva",
+        "alternateName": [
+          "Cardiomiopatia ipertensiva",
+          "Ipertrofia ventricolare sinistra da ipertensione",
+          "Cardiopatia ipertensiva con disfunzione diastolica"
+        ],
+        "description": "Insieme delle modificazioni strutturali e funzionali del muscolo cardiaco (ipertrofia ventricolare sinistra, fibrosi interstiziale, disfunzione diastolica e dilatazione atriale sinistra) conseguenti all'ipertensione arteriosa cronica.",
+        "code": {
+          "@type": "MedicalCode",
+          "code": "I11",
           "codingSystem": "ICD-10"
         }
       },
@@ -1282,16 +1301,16 @@
 
       <!-- Altre Cardiopatie -->
       <div class="conditions-grid">
-        <article class="cond-card" id="cardiopatia-ipertensiva">
+        <article class="cond-card" id="cardiopatia-ipertensiva" style="border-color: var(--acc-border);">
           <div>
-            <h3>Cardiopatia Ipertensiva</h3>
+            <h3><a href="/cardiopatia-ipertensiva" style="color:inherit; text-decoration:none;">Cardiopatia Ipertensiva (Cardiomiopatia Ipertensiva)</a></h3>
             <p>
-              Insieme delle modificazioni strutturali e funzionali del cuore (come l'<strong>ipertrofia ventricolare sinistra</strong>, la disfunzione diastolica e la dilatazione atriale) conseguenti a un'<strong>ipertensione arteriosa</strong> non adeguatamente controllata nel tempo.
+              Insieme delle modificazioni strutturali e funzionali del cuore (come l'<strong>ipertrofia ventricolare sinistra</strong>, la disfunzione diastolica e la dilatazione atriale) conseguenti a un'<strong>ipertensione arteriosa</strong> non adeguatamente controllata nel tempo, reversibili con una terapia mirata.
             </p>
           </div>
           <div class="cond-card-foot">
             <span>Prevenzione &amp; Terapia antipertensiva</span>
-            <span class="tag-upcoming">Guida in arrivo</span>
+            <a href="/cardiopatia-ipertensiva" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
           </div>
         </article>
 
