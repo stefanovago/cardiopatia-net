@@ -187,6 +187,22 @@
         }
       },
       {
+        "@type": "MedicalCondition",
+        "@id": "https://cardiopatia.net/#condition-scompenso",
+        "name": "Scompenso Cardiaco",
+        "alternateName": [
+          "Insufficienza cardiaca",
+          "HFrEF",
+          "HFpEF"
+        ],
+        "description": "Sindrome clinica in cui il cuore non riesce a pompare o a rilassarsi in modo adeguato alle richieste dell'organismo, classificata secondo le Linee Guida ESC agosto 2026 in HFrEF (FEVS < 50%) e HFpEF (FEVS ≥ 50%).",
+        "code": {
+          "@type": "MedicalCode",
+          "code": "I50",
+          "codingSystem": "ICD-10"
+        }
+      },
+      {
         "@type": ["Physician", "Person"],
         "@id": "https://stefanovago.com/#person",
         "name": "Dott. Stefano Vago",
@@ -1339,16 +1355,16 @@
           </div>
         </article>
 
-        <article class="cond-card" id="scompenso-cardiaco">
+        <article class="cond-card" id="scompenso-cardiaco" style="border-color: var(--acc-border);">
           <div>
-            <h3>Scompenso Cardiaco e Aritmie</h3>
+            <h3><a href="/scompenso-cardiaco" style="color:inherit; text-decoration:none;">Scompenso Cardiaco</a></h3>
             <p>
-              Lo <strong>scompenso cardiaco</strong> (insufficienza cardiaca) si verifica quando il cuore non riesce a pompare sangue in misura adeguata alle richieste dell'organismo, spesso associato ad aritmie come la <strong>fibrillazione atriale</strong>.
+              Lo <strong>scompenso cardiaco</strong> (insufficienza cardiaca) si verifica quando il cuore non riesce a pompare o a riempirsi in misura adeguata alle richieste dell'organismo, spesso associato ad aritmie come la <strong>fibrillazione atriale</strong>. Guida aggiornata alle <strong>Linee Guida ESC agosto 2026</strong>.
             </p>
           </div>
           <div class="cond-card-foot">
-            <span>Gestione clinica integrata</span>
-            <span class="tag-upcoming">Guida in arrivo</span>
+            <span>Terapia Fondazionale ESC 2026</span>
+            <a href="/scompenso-cardiaco" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
           </div>
         </article>
       </div>
