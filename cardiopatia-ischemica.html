@@ -476,14 +476,13 @@
     }
 
     .article-grid {
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      gap: 36px;
-      align-items: start;
+      position: relative;
+      display: block;
     }
 
     /* CONTENUTO ARTICOLO */
     .article-content {
+      width: 100%;
       min-width: 0;
     }
     .lead-box {
@@ -768,21 +767,27 @@
       line-height: 1.65;
     }
 
-    /* SIDEBAR STICKY INDICE */
+    /* SIDEBAR INDICE NEL MARGINE DESTRO (DESKTOP LARGO) */
     .sidebar-col {
-      position: sticky;
-      top: 86px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(100% + 22px);
+      width: clamp(185px, calc((100vw - 920px) / 2 - 38px), 245px);
     }
     .toc-card {
+      position: sticky;
+      top: 86px;
+      max-height: calc(100vh - 108px);
+      overflow-y: auto;
       background: var(--surf);
       border: 1px solid var(--line);
       border-radius: var(--r);
-      padding: 18px;
+      padding: 16px;
       box-shadow: var(--shadow);
-      margin-bottom: 18px;
     }
     .toc-title {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -797,21 +802,68 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
     .toc-link {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--ink2);
       text-decoration: none;
-      padding: 4px 8px;
+      padding: 5px 8px;
       border-radius: 6px;
-      line-height: 1.4;
+      line-height: 1.38;
       display: block;
       transition: all 0.15s ease;
     }
-    .toc-link:hover {
+    .toc-link:hover,
+    .toc-link.active {
       color: var(--acc);
+      background: var(--acc-soft);
+      font-weight: 600;
+    }
+
+    /* INDICE COMPATTO INLINE (SCHERMI < 1340PX, TABLET E MOBILE) */
+    .toc-inline {
+      display: none;
       background: var(--surf2);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .toc-inline summary {
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .toc-inline summary::-webkit-details-marker {
+      display: none;
+    }
+    .toc-inline summary::after {
+      content: "+";
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--acc);
+    }
+    .toc-inline[open] summary::after {
+      content: "−";
+    }
+    .toc-inline[open] summary {
+      border-bottom: 1px solid var(--line);
+    }
+    .toc-inline .toc-list {
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px 12px;
     }
 
     /* BOX AUTORE A FINE ARTICOLO */
@@ -917,13 +969,16 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 860px) {
-      .article-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 1339px) {
       .sidebar-col {
-        display: none; /* L'indice sticky si nasconde su tablet e mobile per fluidità */
+        display: none;
       }
+      .toc-inline {
+        display: block;
+      }
+    }
+
+    @media (max-width: 860px) {
       .risk-grid {
         grid-template-columns: 1fr;
       }
@@ -948,6 +1003,9 @@
       }
       .article-title {
         font-size: 1.65rem;
+      }
+      .toc-inline .toc-list {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -1016,6 +1074,21 @@
             In questa guida trovi spiegato in modo chiaro e semplice che cos'è questa patologia, quali esami servono per diagnosticarla e quali sono i trattamenti ad oggi disponibili: dallo stile di vita ai farmaci di ultima generazione, fino all'angioplastica coronarica con impianto di stent.
           </p>
         </div>
+
+        <!-- Indice compatto per schermi medi, tablet e smartphone -->
+        <details class="toc-inline">
+          <summary>Indice dei contenuti</summary>
+          <ul class="toc-list">
+            <li><a href="#che-cos-e" class="toc-link">1. Cos'è la cardiopatia ischemica</a></li>
+            <li><a href="#sintomi" class="toc-link">2. I sintomi e angina pectoris</a></li>
+            <li><a href="#fattori-rischio" class="toc-link">3. Chi è più a rischio</a></li>
+            <li><a href="#diagnosi" class="toc-link">4. Come si fa la diagnosi (esami)</a></li>
+            <li><a href="#cura" class="toc-link">5. I 3 pilastri della cura</a></li>
+            <li><a href="#angioplastica" class="toc-link">6. Angioplastica (PCI) e stent</a></li>
+            <li><a href="#bypass" class="toc-link">7. Bypass aortocoronarico</a></li>
+            <li><a href="#faq" class="toc-link">8. Domande frequenti (FAQ)</a></li>
+          </ul>
+        </details>
 
         <!-- 1. CHE COS'È LA CARDIOPATIA ISCHEMICA CRONICA -->
         <section class="content-section" id="che-cos-e">
@@ -1455,17 +1528,31 @@
   </main>
 
   <script>
-    // Quando l'utente preme la scorciatoia per aggiungere la pagina ai Preferiti (Cmd+D / Ctrl+D),
-    // suggerisce come nome predefinito "Cardiopatia.net"
-    document.addEventListener('keydown', function(e) {
-      if ((e.metaKey || e.ctrlKey) && (e.key === 'd' || e.key === 'D')) {
-        var originalTitle = document.title;
-        document.title = 'Cardiopatia.net';
-        setTimeout(function() {
-          document.title = originalTitle;
-        }, 1500);
+    // Evidenziazione automatica della sezione attiva nell'indice laterale
+    (function() {
+      var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.sidebar-col .toc-link'));
+      if (!tocLinks.length) return;
+      var sections = tocLinks.map(function(link) {
+        var id = link.getAttribute('href').slice(1);
+        return document.getElementById(id);
+      }).filter(Boolean);
+
+      function updateActiveToc() {
+        var trigger = window.innerHeight * 0.3;
+        var current = sections[0] ? sections[0].id : null;
+        for (var i = 0; i < sections.length; i++) {
+          if (sections[i].getBoundingClientRect().top <= trigger) {
+            current = sections[i].id;
+          }
+        }
+        tocLinks.forEach(function(link) {
+          link.classList.toggle('active', Boolean(current && link.getAttribute('href') === '#' + current));
+        });
       }
-    });
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      updateActiveToc();
+    })();
 
     // Tracciamento analitico GA4: consultazione profilo del curatore su stefanovago.com
     document.addEventListener('click', function(e) {

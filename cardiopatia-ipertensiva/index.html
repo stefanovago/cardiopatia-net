@@ -476,14 +476,13 @@
     }
 
     .article-grid {
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      gap: 36px;
-      align-items: start;
+      position: relative;
+      display: block;
     }
 
     /* CONTENUTO ARTICOLO */
     .article-content {
+      width: 100%;
       min-width: 0;
     }
     .lead-box {
@@ -872,21 +871,27 @@
       margin: 0;
     }
 
-    /* SIDEBAR STICKY INDICE */
+    /* SIDEBAR INDICE NEL MARGINE DESTRO (DESKTOP LARGO) */
     .sidebar-col {
-      position: sticky;
-      top: 86px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: calc(100% + 22px);
+      width: clamp(185px, calc((100vw - 920px) / 2 - 38px), 245px);
     }
     .toc-card {
+      position: sticky;
+      top: 86px;
+      max-height: calc(100vh - 108px);
+      overflow-y: auto;
       background: var(--surf);
       border: 1px solid var(--line);
       border-radius: var(--r);
-      padding: 18px;
+      padding: 16px;
       box-shadow: var(--shadow);
-      margin-bottom: 18px;
     }
     .toc-title {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -901,21 +906,68 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 4px;
     }
     .toc-link {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--ink2);
       text-decoration: none;
-      padding: 4px 8px;
+      padding: 5px 8px;
       border-radius: 6px;
-      line-height: 1.4;
+      line-height: 1.38;
       display: block;
       transition: all 0.15s ease;
     }
-    .toc-link:hover {
+    .toc-link:hover,
+    .toc-link.active {
       color: var(--acc);
+      background: var(--acc-soft);
+      font-weight: 600;
+    }
+
+    /* INDICE COMPATTO INLINE (SCHERMI < 1340PX, TABLET E MOBILE) */
+    .toc-inline {
+      display: none;
       background: var(--surf2);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .toc-inline summary {
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .toc-inline summary::-webkit-details-marker {
+      display: none;
+    }
+    .toc-inline summary::after {
+      content: "+";
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--acc);
+    }
+    .toc-inline[open] summary::after {
+      content: "−";
+    }
+    .toc-inline[open] summary {
+      border-bottom: 1px solid var(--line);
+    }
+    .toc-inline .toc-list {
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px 12px;
     }
 
     /* BOX AUTORE A FINE ARTICOLO */
@@ -1021,13 +1073,16 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 860px) {
-      .article-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 1339px) {
       .sidebar-col {
         display: none;
       }
+      .toc-inline {
+        display: block;
+      }
+    }
+
+    @media (max-width: 860px) {
       .risk-grid {
         grid-template-columns: 1fr;
       }
@@ -1052,6 +1107,9 @@
       }
       .article-title {
         font-size: 1.65rem;
+      }
+      .toc-inline .toc-list {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -1120,6 +1178,22 @@
             La buona notizia è che la cardiopatia ipertensiva è una condizione <strong>largamente reversibile</strong>: intervenire in modo mirato sui valori pressori, sullo stile di vita e con i farmaci cardiologici appropriati permette non solo di arrestare il processo, ma di far regredire l'ispessimento del muscolo cardiaco e proteggere il cuore nel lungo periodo.
           </p>
         </div>
+
+        <!-- Indice compatto per schermi medi, tablet e smartphone -->
+        <details class="toc-inline">
+          <summary>Indice dei contenuti</summary>
+          <ul class="toc-list">
+            <li><a href="#che-cos-e" class="toc-link">1. Cos'è la cardiopatia ipertensiva</a></li>
+            <li><a href="#stadi-evoluzione" class="toc-link">2. I 4 stadi di evoluzione</a></li>
+            <li><a href="#sintomi" class="toc-link">3. I sintomi da riconoscere</a></li>
+            <li><a href="#fattori-rischio" class="toc-link">4. Cause e apnee notturne</a></li>
+            <li><a href="#diagnosi" class="toc-link">5. Diagnosi ed esami</a></li>
+            <li><a href="#referto-ecocardio" class="toc-link">6. Leggere il referto ecocardio</a></li>
+            <li><a href="#cura" class="toc-link">7. Cura e regressione ipertrofia</a></li>
+            <li><a href="#misurazione" class="toc-link">8. Misurare la pressione a casa</a></li>
+            <li><a href="#faq" class="toc-link">9. Domande frequenti (FAQ)</a></li>
+          </ul>
+        </details>
 
         <!-- 1. CHE COS'È LA CARDIOPATIA IPERTENSIVA -->
         <section class="content-section" id="che-cos-e">
@@ -1621,6 +1695,32 @@
   </main>
 
   <script>
+    // Evidenziazione automatica della sezione attiva nell'indice laterale
+    (function() {
+      var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.sidebar-col .toc-link'));
+      if (!tocLinks.length) return;
+      var sections = tocLinks.map(function(link) {
+        var id = link.getAttribute('href').slice(1);
+        return document.getElementById(id);
+      }).filter(Boolean);
+
+      function updateActiveToc() {
+        var trigger = window.innerHeight * 0.3;
+        var current = sections[0] ? sections[0].id : null;
+        for (var i = 0; i < sections.length; i++) {
+          if (sections[i].getBoundingClientRect().top <= trigger) {
+            current = sections[i].id;
+          }
+        }
+        tocLinks.forEach(function(link) {
+          link.classList.toggle('active', Boolean(current && link.getAttribute('href') === '#' + current));
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveToc, { passive: true });
+      updateActiveToc();
+    })();
+
     // Tracciamento analitico: consultazione profilo scientifico del curatore
     document.addEventListener('click', function(e) {
       var link = e.target.closest('a');
