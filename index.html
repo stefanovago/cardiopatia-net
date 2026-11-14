@@ -831,132 +831,155 @@
       font-weight: 600;
     }
 
-    /* Card In Evidenza: Cardiopatia Ischemica */
-    .featured-condition {
-      background: var(--surf);
-      border: 1.5px solid var(--acc-border);
-      border-radius: var(--r);
-      padding: 24px;
-      box-shadow: var(--shadow-md);
-      margin-bottom: 16px;
-      position: relative;
-    }
-    .cond-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    .cond-badge-main {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.74rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--acc);
-      color: #FFFFFF;
-    }
-    .cond-status {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--acc);
-      background: var(--acc-soft);
-      border: 1px solid var(--acc-border);
-      padding: 3px 9px;
-      border-radius: 999px;
-    }
-    .featured-condition h3 {
-      margin: 0 0 10px;
-      font-size: 1.22rem;
-      font-weight: 800;
-      color: var(--ink);
-    }
-    .featured-condition p {
-      margin: 0 0 12px;
-      font-size: 0.92rem;
+    /* Griglia Vetrina delle Cardiopatie */
+    .pathology-intro {
+      margin: 0 0 18px;
+      font-size: 0.94rem;
       color: var(--ink2);
-      line-height: 1.65;
+      line-height: 1.62;
     }
-    .cond-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top: 1px dashed var(--line);
-    }
-    .cond-hl-item {
-      background: var(--surf2);
-      border-radius: var(--r-sm);
-      padding: 10px 12px;
-    }
-    .cond-hl-title {
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--acc);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      display: block;
-      margin-bottom: 3px;
-    }
-    .cond-hl-text {
-      font-size: 0.82rem;
-      color: var(--ink2);
-      line-height: 1.4;
-    }
-
-    /* Griglia altre Cardiopatie */
     .conditions-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      gap: 18px;
     }
-    .cond-card {
+    .p-card {
+      position: relative;
       background: var(--surf);
       border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 18px 20px;
+      border-radius: var(--r-lg);
+      padding: 22px 22px 18px;
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 14px;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      text-decoration: none;
+      color: inherit;
     }
-    .cond-card h3 {
-      margin: 0 0 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--ink);
+    .p-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--card-accent, var(--acc));
+      opacity: 0.9;
     }
-    .cond-card p {
-      margin: 0 0 12px;
-      font-size: 0.86rem;
-      color: var(--ink2);
-      line-height: 1.55;
+    @media (hover: hover) and (pointer: fine) {
+      .p-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--acc-border);
+      }
+      .p-card:hover .p-card-arrow {
+        background: var(--acc);
+        color: #ffffff;
+        transform: translateX(3px);
+      }
+      .p-card:hover .p-card-title {
+        color: var(--acc);
+      }
     }
-    .cond-card-foot {
+    .p-card-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      padding-top: 10px;
-      border-top: 1px solid var(--line);
+      gap: 12px;
+    }
+    .p-card-ident {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .p-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background: var(--icon-bg, var(--acc-soft));
+      border: 1px solid var(--icon-border, var(--acc-border));
+      color: var(--card-accent, var(--acc));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .p-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+    .p-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--card-accent, var(--acc));
+      display: block;
+    }
+    .p-subcat {
       font-size: 0.76rem;
       color: var(--ink3);
-      font-weight: 600;
+      font-weight: 500;
+      display: block;
     }
-    .tag-upcoming {
-      color: var(--acc);
-      background: var(--acc-soft);
-      padding: 2px 8px;
-      border-radius: 999px;
+    .p-card-title {
+      margin: 10px 0 7px;
+      font-size: 1.16rem;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      line-height: 1.28;
+      color: var(--ink);
+      transition: color 0.16s ease;
+    }
+    .p-card-desc {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--ink2);
+      line-height: 1.6;
+    }
+    .p-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .p-tag {
+      font-size: 0.74rem;
       font-weight: 600;
-      font-size: 0.73rem;
+      color: var(--ink2);
+      background: var(--surf2);
+      border: 1px solid var(--line);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+    .p-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--acc);
+    }
+    .p-card-arrow {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--acc-soft);
+      border: 1px solid var(--acc-border);
+      color: var(--acc);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: all 0.18s ease;
+      flex-shrink: 0;
     }
 
     /* Sintomi e Diagnosi */
@@ -1306,33 +1329,20 @@
 
   <main class="container">
 
-    <!-- Banner Stato del Portale -->
-    <div class="launch-banner" role="status">
-      <div class="launch-banner-left">
-        <span class="pulse-dot" aria-hidden="true"></span>
-        <span><strong>Portale in fase di ampliamento editoriale:</strong> guida generale attiva · dossier specialistici per singola patologia in pubblicazione.</span>
-      </div>
-      <a href="https://stefanovago.com/" class="launch-banner-link" rel="author">Profilo del Curatore →</a>
-    </div>
-
     <!-- 1. HERO PRINCIPALE -->
     <section class="hero-card" aria-label="Introduzione a Cardiopatia.net">
       <div class="hero-grid">
         <div>
-          <span class="hero-badge">Medicina Basata sulle Evidenze · Linee Guida ESC</span>
           <h1 class="hero-title">Cardiopatia.net - Il portale delle malattie del cuore</h1>
           <p class="hero-lead">
-            <strong>Cardiopatia.net</strong> nasce per offrire ai pazienti e ai loro familiari informazioni mediche rigorose, chiare e aggiornate sulle <strong>patologie cardiovascolari</strong>: dalla <strong>cardiopatia ischemica</strong> alle malattie valvolari, dallo scompenso cardiaco fino alla prevenzione primaria e secondaria.
+            <strong>Cardiopatia.net</strong> nasce per offrire ai pazienti e ai loro familiari informazioni mediche rigorose, chiare e aggiornate sulle <strong>patologie cardiovascolari</strong>: dalla <strong>cardiopatia ischemica</strong> alle malattie valvolari, dallo scompenso cardiaco fino alle aritmie e alle cardiomiopatie.
           </p>
           <p class="hero-lead" style="margin-bottom:0;">
             Comprendere il significato di una diagnosi, riconoscere tempestivamente i sintomi e conoscere il percorso diagnostico-terapeutico più appropriato è il primo passo per prendersi cura della salute del proprio cuore insieme al proprio medico di fiducia.
           </p>
           <div class="hero-actions">
-            <a href="/cardiopatia-ischemica" class="btn btn-primary">
-              Guida alla Cardiopatia Ischemica →
-            </a>
-            <a href="#patologie" class="btn btn-secondary">
-              Esplora le Cardiopatie
+            <a href="#patologie" class="btn btn-primary">
+              Esplora le Cardiopatie ↓
             </a>
           </div>
         </div>
@@ -1350,170 +1360,262 @@
           In medicina, il termine <strong>cardiopatia</strong> indica qualsiasi condizione patologica — acuta o cronica, congenita o acquisita — che altera la struttura anatomica o il funzionamento del <strong>cuore</strong>. Non si tratta quindi di una singola malattia, ma di una famiglia di quadri clinici molto diversi tra loro per cause, sintomi, prognosi e trattamento.
         </p>
         <p>
-          Il cuore funziona come una pompa muscolare instancabile: per contrarsi regolarmente ha bisogno di un apporto costante di sangue ossigenato attraverso le <strong>arterie coronarie</strong>, di un muscolo cardiaco (<strong>miocardio</strong>) elastico e integro, di quattro <strong>valvole cardiache</strong> che garantiscano il flusso unidirezionale del sangue e di un <strong>sistema elettrico di conduzione</strong> che scandisca il battito. Quando uno o più di questi componenti subiscono un'alterazione, si configura una specifica forma di cardiopatia.
+          Il cuore funziona come una pompa muscolare instancabile: per contrarsi regolarmente ha bisogno di un apporto costante di sangue ossigenato attraverso le <strong>arterie coronarie</strong>, di un muscolo cardiaco (<strong>miocardio</strong>) elastico e integro, di quattro <strong>valvole cardiache</strong> che garantiscano il flusso unidirezionale del sangue, di un <strong>sistema elettrico di conduzione</strong> che scandisca il battito e di un sacco protettivo esterno (il <strong>pericardio</strong>). Quando uno o più di questi componenti subiscono un'alterazione, si configura una specifica forma di cardiopatia.
         </p>
       </div>
     </section>
 
-    <!-- 3. LE PRINCIPALI FORME DI CARDIOPATIA (FOCUS CARDIOPATIA ISCHEMICA) -->
+    <!-- 3. LE PRINCIPALI FORME DI CARDIOPATIA -->
     <section class="section" id="patologie" aria-labelledby="sec-patologie">
+      <span id="tipologie" style="position:relative; top:-80px;"></span>
       <div class="section-header">
-        <h2 class="section-title" id="sec-patologie">Classificazione e principali tipi di cardiopatia</h2>
-        <span class="section-sub">Patologie cardiologiche</span>
+        <h2 class="section-title" id="sec-patologie">Le guide alle principali cardiopatie</h2>
+        <span class="section-sub">8 Dossier Monografici</span>
       </div>
+      <p class="pathology-intro">
+        Seleziona la patologia di tuo interesse per consultare la guida completa rivolta ai pazienti: sintomi da riconoscere, come interpretare i referti di ecocardiogramma, risonanza ed esami del sangue e quali sono le terapie più efficaci.
+      </p>
 
-      <!-- Focus Principale: Cardiopatia Ischemica -->
-      <article class="featured-condition" id="cardiopatia-ischemica">
-        <div class="cond-header">
-          <span class="cond-badge-main">Focus Clinico Principale</span>
-          <a href="/cardiopatia-ischemica" class="cond-status" style="text-decoration:none; font-weight:700;">Guida Completa Online →</a>
-        </div>
-        <h3><a href="/cardiopatia-ischemica" style="color:inherit; text-decoration:none;">Cardiopatia Ischemica (Sindromi Coronariche Croniche e Acute)</a></h3>
-        <p>
-          La <strong>cardiopatia ischemica</strong> (o <em>coronaropatia</em>) rappresenta la forma più diffusa di malattia cardiaca ed è causata da un ridotto apporto di sangue e ossigeno al muscolo cardiaco (<strong>ischemia miocardica</strong>). Nella maggioranza dei pazienti è dovuta alla presenza di placche aterosclerotiche che restringono il lume delle arterie coronarie, ma può insorgere anche per meccanismi non aterosclerotici quali lo spasmo coronarico, la disfunzione del microcircolo o la <strong>dissezione coronarica spontanea (SCAD)</strong>, particolarmente rilevante nei pazienti giovani e nelle donne.
-        </p>
-        <p style="margin-bottom:0;">
-          Dal punto di vista clinico si distingue in <strong>sindromi coronariche croniche</strong> (come l'angina pectoris stabile da sforzo o la cardiopatia ischemica cronica post-infartuale) e <strong>sindromi coronariche acute</strong> (angina instabile e infarto miocardico acuto), che richiedono un inquadramento tempestivo e strategie mirate di rivascolarizzazione o terapia medica ottimizzata.
-        </p>
-        <div class="cond-highlights">
-          <div class="cond-hl-item">
-            <span class="cond-hl-title">Manifestazioni tipiche</span>
-            <span class="cond-hl-text">Dolore o oppressione retrosternale (angina), dispnea da sforzo, affaticamento precoce o ischemia silente.</span>
-          </div>
-          <div class="cond-hl-item">
-            <span class="cond-hl-title">Imaging &amp; Diagnosi</span>
-            <span class="cond-hl-text">ECG, Ecocardiogramma, TC Coronarica, Risonanza Magnetica da stress e Coronarografia invasiva.</span>
-          </div>
-          <div class="cond-hl-item">
-            <span class="cond-hl-title">Trattamento &amp; Cura</span>
-            <span class="cond-hl-text">Stile di vita, target LDL &lt; 55 mg/dL, farmaci moderni e angioplastica con stent medicato.</span>
-          </div>
-        </div>
-        <div style="margin-top:16px;">
-          <a href="/cardiopatia-ischemica" class="btn btn-primary" style="font-weight:700;">
-            Leggi la Guida Completa alla Cardiopatia Ischemica →
-          </a>
-        </div>
-      </article>
-
-      <!-- Altre Cardiopatie -->
       <div class="conditions-grid">
-        <article class="cond-card" id="cardiopatia-ipertensiva" style="border-color: var(--acc-border);">
+        <!-- 1. Cardiopatia Ischemica -->
+        <a href="/cardiopatia-ischemica" class="p-card" id="cardiopatia-ischemica" style="--card-accent:#b91c1c; --icon-bg:#fef2f2; --icon-border:#fecaca;">
           <div>
-            <h3><a href="/cardiopatia-ipertensiva" style="color:inherit; text-decoration:none;">Cardiopatia Ipertensiva</a></h3>
-            <p>
-              Insieme delle modificazioni strutturali e funzionali del cuore (come l'<strong>ipertrofia ventricolare sinistra</strong>, la disfunzione diastolica e la dilatazione atriale) conseguenti a un'<strong>ipertensione arteriosa</strong> non adeguatamente controllata nel tempo, reversibili con una terapia mirata.
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Arterie Coronarie</span>
+                  <span class="p-subcat">Angina pectoris, infarto e SCAD</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Cardiopatia Ischemica</h3>
+            <p class="p-card-desc">
+              Nasce quando le arterie coronarie si restringono e portano meno sangue e ossigeno al cuore. Scopri come riconoscere l'angina da sforzo e l'ischemia silente, quando fare la TC coronarica e come proteggere il cuore con farmaci e stent.
             </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Dolore toracico e angina</span>
+              <span class="p-tag">TC coronarica e stent</span>
+              <span class="p-tag">Colesterolo LDL e cura</span>
+            </div>
           </div>
-          <div class="cond-card-foot">
-            <span>Prevenzione &amp; Terapia antipertensiva</span>
-            <a href="/cardiopatia-ipertensiva" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
-        </article>
+        </a>
 
-        <article class="cond-card" id="cardiomiopatie">
+        <!-- 2. Cardiopatia Ipertensiva -->
+        <a href="/cardiopatia-ipertensiva" class="p-card" id="cardiopatia-ipertensiva" style="--card-accent:#c2410c; --icon-bg:#fff7ed; --icon-border:#fed7aa;">
           <div>
-            <h3>Cardiomiopatie (Dilatativa, Ipertrofica, Amiloidosi)</h3>
-            <p>
-              Malattie primitive del muscolo cardiaco non secondarie a coronaropatia o valvulopatia. Includono la <strong>cardiopatia dilatativa</strong>, la cardiomiopatia ipertrofica, la cardiomiopatia aritmogena e le forme infiltrative come l'<strong>amiloidosi cardiaca (ATTR)</strong>.
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/><path d="M12 12v.01"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Pressione Arteriosa</span>
+                  <span class="p-subcat">Ipertrofia ventricolare e diastole</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Cardiopatia Ipertensiva</h3>
+            <p class="p-card-desc">
+              Lavorando per anni contro una pressione alta non controllata, il muscolo cardiaco ispessisce le proprie pareti e diventa meno elastico. Una condizione largamente reversibile riportando i valori pressori nei limiti ideali.
             </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Ipertrofia ventricolare</span>
+              <span class="p-tag">Disfunzione diastolica</span>
+              <span class="p-tag">Regressione e terapia</span>
+            </div>
           </div>
-          <div class="cond-card-foot">
-            <span>Ecocardiografia &amp; RM Cardiaca</span>
-            <span class="tag-upcoming">Guida in arrivo</span>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
-        </article>
+        </a>
 
-        <article class="cond-card" id="cardiopatia-valvolare">
+        <!-- 3. Scompenso Cardiaco -->
+        <a href="/scompenso-cardiaco" class="p-card" id="scompenso-cardiaco" style="--card-accent:#991b1b; --icon-bg:#fef2f2; --icon-border:#fecaca;">
           <div>
-            <h3>Cardiopatia Valvolare (Valvulopatie)</h3>
-            <p>
-              Alterazioni di una o più valvole cardiache (aortica, mitralica, tricuspide, polmonare) per <strong>stenosi</strong> (restringimento dell'apertura) o <strong>insufficienza/rigurgito</strong> (chiusura incompleta), oggi trattabili anche con metodiche transcatetere mininvasive.
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Funzione di Pompa</span>
+                  <span class="p-subcat">Frazione di eiezione ridotta e preservata</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Scompenso Cardiaco (Insufficienza Cardiaca)</h3>
+            <p class="p-card-desc">
+              Si verifica quando il cuore fa più fatica a spingere il sangue o a rilassarsi per riempirsi, causando fiato corto salendo le scale, stanchezza e caviglie gonfie. Con i moderni farmaci cardioprotettivi il cuore recupera forza e stabilità.
             </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Fiato corto e liquidi</span>
+              <span class="p-tag">Frazione di eiezione (FEVS)</span>
+              <span class="p-tag">I 4 pilastri della cura</span>
+            </div>
           </div>
-          <div class="cond-card-foot">
-            <span>Valutazione ecocardiografica</span>
-            <span class="tag-upcoming">Guida in arrivo</span>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
-        </article>
+        </a>
 
-        <article class="cond-card" id="scompenso-cardiaco" style="border-color: var(--acc-border);">
+        <!-- 4. Fibrillazione Atriale -->
+        <a href="/fibrillazione-atriale" class="p-card" id="fibrillazione-atriale" style="--card-accent:#7e22ce; --icon-bg:#faf5ff; --icon-border:#e9d5ff;">
           <div>
-            <h3><a href="/scompenso-cardiaco" style="color:inherit; text-decoration:none;">Scompenso Cardiaco (Insufficienza Cardiaca)</a></h3>
-            <p>
-              Lo <strong>scompenso cardiaco</strong> si verifica quando il cuore fa più fatica a pompare il sangue o a rilassarsi per riempirsi, causando fiato corto, stanchezza e gonfiore alle caviglie. Con le terapie moderne il cuore può recuperare forza e stabilità.
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l2-6 3 12 3-9 2 6 2-3h5"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Ritmo ed Elettricità</span>
+                  <span class="p-subcat">Forma parossistica e persistente</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Fibrillazione Atriale</h3>
+            <p class="p-card-desc">
+              È l'aritmia cardiaca più diffusa: gli atri perdono la loro regolare sincronia elettrica rendendo il battito veloce e disordinato. Scopri come proteggere il cervello con i nuovi anticoagulanti e quando ricorrere all'ablazione.
             </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Palpitazioni e smartwatch</span>
+              <span class="p-tag">Anticoagulanti (NAO)</span>
+              <span class="p-tag">Cardioversione e ablazione</span>
+            </div>
           </div>
-          <div class="cond-card-foot">
-            <span>Gestione clinica &amp; Terapie moderne</span>
-            <a href="/scompenso-cardiaco" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
-        </article>
+        </a>
 
-        <article class="cond-card" id="fibrillazione-atriale" style="border-color: var(--acc-border);">
+        <!-- 5. Pericardite -->
+        <a href="/pericardite" class="p-card" id="pericardite" style="--card-accent:#0369a1; --icon-bg:#f0f9ff; --icon-border:#bae6fd;">
           <div>
-            <h3><a href="/fibrillazione-atriale" style="color:inherit; text-decoration:none;">Fibrillazione Atriale</a></h3>
-            <p>
-              La <strong>fibrillazione atriale</strong> è il disturbo del ritmo cardiaco più diffuso: gli atri perdono la loro regolare sincronia elettrica rendendo il battito irregolare e spesso accelerato. Riconoscerla e curarla protegge il cervello e la forza del cuore.
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Sacco Pericardico</span>
+                  <span class="p-subcat">Forma acuta, ricorrente e versamento</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Pericardite</h3>
+            <p class="p-card-desc">
+              È l'infiammazione della sottile membrana che avvolge il cuore: provoca una fitta al petto che peggiora inspirando o sdraiandosi e migliora sedendosi piegati in avanti. Scopri come curarla con antinfiammatori, colchicina e riposo.
             </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Dolore che cambia col respiro</span>
+              <span class="p-tag">Versamento pericardico</span>
+              <span class="p-tag">Colchicina e recidive</span>
+            </div>
           </div>
-          <div class="cond-card-foot">
-            <span>Controllo del ritmo &amp; Prevenzione</span>
-            <a href="/fibrillazione-atriale" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
-        </article>
+        </a>
 
-        <article class="cond-card" id="pericardite" style="border-color: var(--acc-border);">
+        <!-- 6. Miocardite -->
+        <a href="/miocardite" class="p-card" id="miocardite" style="--card-accent:#0f766e; --icon-bg:#f0fdfa; --icon-border:#99f6e4;">
           <div>
-            <h3><a href="/pericardite" style="color:inherit; text-decoration:none;">Pericardite (Acuta e Ricorrente)</a></h3>
-            <p>
-              La <strong>pericardite</strong> è l'infiammazione del sottile sacco che avvolge il cuore: provoca un tipico dolore al petto che cambia col respiro e con la postura e può associarsi a <strong>versamento pericardico</strong>. Con antinfiammatori, colchicina e riposo si guarisce prevenendo le ricadute.
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h2l1.5-4 3 8 1.5-4h2"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Muscolo Cardiaco</span>
+                  <span class="p-subcat">Infiammazione virale e recupero</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Miocardite</h3>
+            <p class="p-card-desc">
+              È l'infiammazione delle cellule muscolari del cuore, spesso successiva a una febbre o gastroenterite virale: fa salire la troponina a coronarie sane. Scopri cosa significano edema e LGE alla Risonanza Magnetica e quando tornare allo sport.
             </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Troponina a coronarie sane</span>
+              <span class="p-tag">Edema e LGE alla RM</span>
+              <span class="p-tag">Convalescenza e sport</span>
+            </div>
           </div>
-          <div class="cond-card-foot">
-            <span>Dolore toracico &amp; Terapia mirata</span>
-            <a href="/pericardite" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
-        </article>
+        </a>
 
-        <article class="cond-card" id="miocardite" style="border-color: var(--acc-border);">
+        <!-- 7. Stenosi Valvolare Aortica -->
+        <a href="/stenosi-aortica" class="p-card" id="stenosi-aortica" style="--card-accent:#b45309; --icon-bg:#fffbeb; --icon-border:#fde68a;">
           <div>
-            <h3><a href="/miocardite" style="color:inherit; text-decoration:none;">Miocardite</a></h3>
-            <p>
-              La <strong>miocardite</strong> è l'infiammazione del muscolo cardiaco, spesso successiva a una comune infezione virale: può causare dolore al petto e rialzo della troponina a coronarie sane. Riconoscerla con la Risonanza Magnetica e rispettare il riposo permette una guarigione completa.
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v9"/><path d="m12 12 7.8 4.5"/><path d="m12 12-7.8 4.5"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Valvole Cardiache</span>
+                  <span class="p-subcat">Calcificazione e valvola bicuspide</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Stenosi Valvolare Aortica</h3>
+            <p class="p-card-desc">
+              È il progressivo restringimento della valvola d'uscita del cuore: silenziosa nei gradi lieve e moderato, quando diventa severa viene oggi risolta sostituendo la valvola con la TAVI (dall'inguine senza aprire il torace) o con l'intervento.
             </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Soffio, area e gradiente</span>
+              <span class="p-tag">Valvola bicuspide</span>
+              <span class="p-tag">Procedura TAVI e chirurgia</span>
+            </div>
           </div>
-          <div class="cond-card-foot">
-            <span>RM Cardiaca &amp; Ritorno allo sport</span>
-            <a href="/miocardite" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
-        </article>
+        </a>
 
-        <article class="cond-card" id="stenosi-aortica" style="border-color: var(--acc-border);">
+        <!-- 8. Amiloidosi Cardiaca -->
+        <a href="/amiloidosi-cardiaca" class="p-card" id="amiloidosi-cardiaca" style="--card-accent:#4338ca; --icon-bg:#eef2ff; --icon-border:#c7d2fe;">
           <div>
-            <h3><a href="/stenosi-aortica" style="color:inherit; text-decoration:none;">Stenosi Valvolare Aortica</a></h3>
-            <p>
-              La <strong>stenosi valvolare aortica</strong> è il restringimento della valvola attraverso cui il sangue esce dal cuore: silenziosa nelle forme lievi e moderate, quando diventa severa può dare fiato corto, dolore al petto o capogiri ed è oggi curabile con la <strong>TAVI</strong> o l'intervento chirurgico.
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3z"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Cardiomiopatie Infiltrative</span>
+                  <span class="p-subcat">Transtiretina (ATTR) e catene leggere (AL)</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Amiloidosi Cardiaca (ATTR e AL)</h3>
+            <p class="p-card-desc">
+              È causata dal deposito di una proteina tra le fibre muscolari del cuore, che ne ispessisce e irrigidisce le pareti: spesso preceduta dal tunnel carpale a entrambe le mani, si diagnostica con la scintigrafia e si blocca con terapie mirate.
             </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Pareti spesse e tunnel carpale</span>
+              <span class="p-tag">Scintigrafia senza biopsia</span>
+              <span class="p-tag">Tafamidis e nuove cure</span>
+            </div>
           </div>
-          <div class="cond-card-foot">
-            <span>Ecocardiogramma, TAVI &amp; Cura</span>
-            <a href="/stenosi-aortica" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
-        </article>
-
-        <article class="cond-card" id="amiloidosi-cardiaca" style="border-color: var(--acc-border);">
-          <div>
-            <h3><a href="/amiloidosi-cardiaca" style="color:inherit; text-decoration:none;">Amiloidosi Cardiaca (ATTR e AL)</a></h3>
-            <p>
-              L'<strong>amiloidosi cardiaca</strong> è dovuta al deposito di una proteina (più spesso la <strong>transtiretina, ATTR</strong>) tra le fibre del cuore, che ne ispessisce e irrigidisce le pareti: spesso preceduta dal tunnel carpale alle mani, oggi si diagnostica senza biopsia e si blocca con farmaci specifici.
-            </p>
-          </div>
-          <div class="cond-card-foot">
-            <span>Scintigrafia &amp; Terapie mirate</span>
-            <a href="/amiloidosi-cardiaca" class="cond-status" style="text-decoration:none; font-weight:700;">Leggi la Guida →</a>
-          </div>
-        </article>
+        </a>
       </div>
     </section>
 
@@ -1579,7 +1681,7 @@
     <section class="section" id="prevenzione" aria-labelledby="sec-prevenzione">
       <div class="section-header">
         <h2 class="section-title" id="sec-prevenzione">I 4 pilastri della prevenzione cardiovascolare</h2>
-        <span class="section-sub">Linee Guida ESC</span>
+        <span class="section-sub">Salute del cuore</span>
       </div>
       <div class="prev-grid">
         <div class="prev-card">
