@@ -1030,6 +1030,29 @@
       flex-shrink: 0;
     }
 
+    /* Griglia 3x3 per Esami, Procedure e Dispositivi */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .tools-grid .p-card {
+      padding: 19px 18px 16px;
+      gap: 12px;
+    }
+    .tools-grid .p-card-title {
+      font-size: 1.06rem;
+    }
+    .clinical-list a {
+      color: var(--acc);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .clinical-list a:hover {
+      color: var(--acc-hover);
+    }
+
     /* Sintomi e Diagnosi */
     .two-col {
       display: grid;
@@ -1298,6 +1321,7 @@
         grid-template-columns: 1fr;
       }
       .conditions-grid,
+      .tools-grid,
       .two-col {
         grid-template-columns: 1fr;
       }
@@ -1367,7 +1391,8 @@
       <nav class="site-nav" aria-label="Navigazione principale">
         <a href="#cos-e" class="nav-link">Cos'è</a>
         <a href="#patologie" class="nav-link">Patologie</a>
-        <a href="#sintomi-diagnosi" class="nav-link">Sintomi ed Esami</a>
+        <a href="#esami-dispositivi" class="nav-link">Esami e Dispositivi</a>
+        <a href="#sintomi-diagnosi" class="nav-link">Sintomi</a>
         <a href="#prevenzione" class="nav-link">Prevenzione</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="https://stefanovago.com/" class="nav-link nav-cta" rel="author">Dott. Stefano Vago ↗</a>
@@ -1383,14 +1408,17 @@
         <div>
           <h1 class="hero-title">Cardiopatia.net - Il portale delle malattie del cuore</h1>
           <p class="hero-lead">
-            <strong>Cardiopatia.net</strong> nasce per offrire ai pazienti e ai loro familiari informazioni mediche rigorose, chiare e aggiornate sulle <strong>patologie cardiovascolari</strong>: dalla <strong>cardiopatia ischemica</strong> alle malattie valvolari, dallo scompenso cardiaco fino alle aritmie e alle cardiomiopatie.
+            <strong>Cardiopatia.net</strong> nasce per offrire ai pazienti e ai loro familiari informazioni mediche rigorose, chiare e aggiornate sulle <strong>patologie cardiovascolari</strong>: dalla <strong>cardiopatia ischemica</strong> all'<strong>ipertensione arteriosa</strong>, dallo scompenso cardiaco alle aritmie e cardiomiopatie, fino agli <strong>esami diagnostici</strong> e ai <strong>dispositivi cardiaci</strong>.
           </p>
           <p class="hero-lead" style="margin-bottom:0;">
-            Comprendere il significato di una diagnosi, riconoscere tempestivamente i sintomi e conoscere il percorso diagnostico-terapeutico più appropriato è il primo passo per prendersi cura della salute del proprio cuore insieme al proprio medico di fiducia.
+            Comprendere il significato di una diagnosi, leggere serenamente il referto di un esame e conoscere il percorso terapeutico più appropriato è il primo passo per prendersi cura del proprio cuore insieme al proprio medico di fiducia.
           </p>
           <div class="hero-actions">
             <a href="#patologie" class="btn btn-primary">
               Esplora le Cardiopatie ↓
+            </a>
+            <a href="#esami-dispositivi" class="btn btn-secondary">
+              Guide a Esami e Dispositivi ↓
             </a>
           </div>
         </div>
@@ -1418,7 +1446,7 @@
       <span id="tipologie" style="position:relative; top:-80px;"></span>
       <div class="section-header">
         <h2 class="section-title" id="sec-patologie">Le guide alle principali cardiopatie</h2>
-        <span class="section-sub">11 Dossier Monografici</span>
+        <span class="section-sub">12 Dossier Monografici</span>
       </div>
       <p class="pathology-intro">
         Seleziona la patologia di tuo interesse per consultare la guida completa rivolta ai pazienti: sintomi da riconoscere, come interpretare i referti di ecocardiogramma, risonanza ed esami del sangue e quali sono le terapie più efficaci.
@@ -1754,6 +1782,274 @@
             <span class="p-card-arrow" aria-hidden="true">→</span>
           </div>
         </a>
+
+        <!-- 12. Ipertensione Arteriosa -->
+        <a href="/ipertensione-arteriosa" class="p-card" id="ipertensione-arteriosa" style="--card-accent:#b45309; --icon-bg:#fffbeb; --icon-border:#fde68a;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Prevenzione Cardiovascolare</span>
+                  <span class="p-subcat">Valori pressori, misurazione e cura</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Ipertensione Arteriosa (Pressione Alta)</h3>
+            <p class="p-card-desc">
+              Quali sono i valori normali a casa e dal medico, come misurare correttamente la pressione, come riconoscere l'effetto camice bianco e cosa fare davanti a un picco pressorio.
+            </p>
+            <div class="p-card-tags">
+              <span class="p-tag">Tabella valori e target</span>
+              <span class="p-tag">7 regole di misurazione</span>
+              <span class="p-tag">Cosa fare nei picchi</span>
+            </div>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida completa</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3B. ESAMI CARDIOLOGICI, PROCEDURE E DISPOSITIVI -->
+    <section class="section" id="esami-dispositivi" aria-labelledby="sec-esami">
+      <div class="section-header">
+        <h2 class="section-title" id="sec-esami">Esami cardiologici, procedure e dispositivi</h2>
+        <span class="section-sub">9 Guide Pratiche per il Paziente</span>
+      </div>
+      <p class="pathology-intro">
+        Devi sottoporti a un esame del cuore, hai ritirato un referto pieno di sigle o devi impiantare un dispositivo cardiaco? Scopri passo dopo passo come funzionano gli esami e come leggere i risultati in parole semplici.
+      </p>
+
+      <div class="tools-grid">
+        <!-- 1. Elettrocardiogramma (ECG) -->
+        <a href="/elettrocardiogramma" class="p-card" id="elettrocardiogramma" style="--card-accent:#007bbc; --icon-bg:#eff7fc; --icon-border:#bce0f5;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Diagnostica di Base</span>
+                  <span class="p-subcat">Ritmo e conduzione</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Elettrocardiogramma (ECG)</h3>
+            <p class="p-card-desc">
+              Cosa significano le onde P, QRS e T, come leggere frasi come blocco di branca destra incompleto e perché ignorare le scritte automatiche del computer.
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- 2. Ecocardiogramma Color-Doppler -->
+        <a href="/ecocardiogramma" class="p-card" id="ecocardiogramma" style="--card-accent:#0284c7; --icon-bg:#f0f9ff; --icon-border:#bae6fd;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><circle cx="12" cy="12" r="2"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Ecografia Cardiaca</span>
+                  <span class="p-subcat">Valori normali e referto</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Ecocardiogramma</h3>
+            <p class="p-card-desc">
+              A cosa serve l'ecocolordoppler del cuore, i valori normali (FEVS, setto, atrio, TAPSE) e il significato rassicurante di "minimo rigurgito" o "alterato rilasciamento".
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- 3. Holter ECG -->
+        <a href="/holter-ecg" class="p-card" id="holter-ecg" style="--card-accent:#0d9488; --icon-bg:#f0fdfa; --icon-border:#99f6e4;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 12h2l2-4 2 8 2-4h2"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Monitoraggio 24/48 Ore</span>
+                  <span class="p-subcat">Aritmie ed extrasistoli</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Holter ECG (Dinamico)</h3>
+            <p class="p-card-desc">
+              Come prepararsi alle 24 ore con gli elettrodi, il diario dei sintomi, cosa si può fare a casa e come interpretare frequenza cardiaca, extrasistoli e pause.
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- 4. Holter Pressorio -->
+        <a href="/holter-pressorio" class="p-card" id="holter-pressorio" style="--card-accent:#0369a1; --icon-bg:#e0f2fe; --icon-border:#bae6fd;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Monitoraggio ABPM</span>
+                  <span class="p-subcat">Pressione diurna e notturna</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Holter Pressorio 24 Ore</h3>
+            <p class="p-card-desc">
+              Perché le soglie medie dell'ABPM sono più basse dell'ambulatorio, come comportarsi durante il gonfiaggio del bracciale e cosa significa profilo "Dipper" o "Non-Dipper".
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- 5. Ecocardiografia Transesofagea -->
+        <a href="/ecocardiografia-transesofagea" class="p-card" id="ecocardiografia-transesofagea" style="--card-accent:#6f45f2; --icon-bg:#f3efff; --icon-border:#d7c7fc;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Imaging di Secondo Livello</span>
+                  <span class="p-subcat">Valvole, auricola e PFO</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Ecocardiografia Transesofagea</h3>
+            <p class="p-card-desc">
+              Perché permette immagini così nitide dietro al cuore, preparazione con digiuno, come funzionano spray anestetico e sedazione leggera e perché respiri liberamente.
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- 6. Studio Elettrofisiologico -->
+        <a href="/studio-elettrofisiologico" class="p-card" id="studio-elettrofisiologico" style="--card-accent:#4f46e5; --icon-bg:#eef2ff; --icon-border:#c7d2fe;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Aritmologia Invasiva</span>
+                  <span class="p-subcat">Mappatura circuiti e ablazione</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Studio Elettrofisiologico (SEF)</h3>
+            <p class="p-card-desc">
+              Un "controllo dall'interno" dei circuiti elettrici cardiaci tramite sottili sondini dalla vena dell'inguine: come si svolge, quando porta all'ablazione e il recupero rapido.
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- 7. Coronarografia -->
+        <a href="/coronarografia" class="p-card" id="coronarografia" style="--card-accent:#cd2727; --icon-bg:#fdf2f2; --icon-border:#f7d0d0;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M12 7c3 0 5-2 7-4"/><path d="M12 13c-3 0-5-2-7-4"/><path d="M12 17c3 0 5 2 7 4"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Cardiologia Interventistica</span>
+                  <span class="p-subcat">Dal polso, FFR e stent</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Coronarografia e Angioplastica</h3>
+            <p class="p-card-desc">
+              Come si svolge dal polso da svegli in anestesia locale, la misurazione FFR e l'eventuale stent nella stessa seduta, il significato dei nomi sul referto e il ritorno a casa.
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- 8. Pacemaker Cardiaco -->
+        <a href="/pacemaker" class="p-card" id="pacemaker" style="--card-accent:#0f766e; --icon-bg:#f0fdfa; --icon-border:#99f6e4;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="4"/><path d="M10 12h4"/><path d="M12 10v4"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Dispositivi Cardiaci</span>
+                  <span class="p-subcat">Elettrostimolazione e CRT-P</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Pacemaker Cardiaco</h3>
+            <p class="p-card-desc">
+              Quando serve contro il battito troppo lento, i modelli tradizionali e senza fili (leadless), la durata della batteria (8–12 anni), la Risonanza Magnetica e gli elettrodomestici.
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <!-- 9. Defibrillatore Impiantabile (ICD / S-ICD) -->
+        <a href="/defibrillatore-impiantabile" class="p-card" id="defibrillatore-impiantabile" style="--card-accent:#991b1b; --icon-bg:#fef2f2; --icon-border:#fecaca;">
+          <div>
+            <div class="p-card-head">
+              <div class="p-card-ident">
+                <span class="p-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M13 8l-3 4h3l-1 4"/></svg>
+                </span>
+                <div>
+                  <span class="p-cat">Protezione Aritmica</span>
+                  <span class="p-subcat">ICD, CRT-D e sottocutaneo S-ICD</span>
+                </div>
+              </div>
+            </div>
+            <h3 class="p-card-title">Defibrillatore Impiantabile (ICD)</h3>
+            <p class="p-card-desc">
+              Differenza rispetto al pacemaker, terapia indolore ATP e defibrillazione, il modello sottocutaneo S-ICD, cosa fare in caso di intervento e vita quotidiana in sicurezza.
+            </p>
+          </div>
+          <div class="p-card-foot">
+            <span>Leggi la guida</span>
+            <span class="p-card-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -1791,20 +2087,20 @@
           <h3>Gli esami della moderna diagnostica cardiologica</h3>
           <ul class="clinical-list">
             <li>
-              <strong>Visita Cardiologica con Elettrocardiogramma (ECG)</strong>
+              <strong>Visita Cardiologica con <a href="/elettrocardiogramma">Elettrocardiogramma (ECG)</a></strong>
               Primo passo essenziale per raccogliere l'anamnesi, valutare i fattori di rischio e analizzare l'attività elettrica del cuore.
             </li>
             <li>
-              <strong>Ecocardiogramma Color-Doppler Transtoracico</strong>
-              Esame cardine non invasivo che permette di visualizzare in tempo reale la contrattilità dei ventricoli, la frazione di eiezione e il funzionamento delle valvole.
+              <strong><a href="/ecocardiogramma">Ecocardiogramma Color-Doppler Transtoracico</a></strong>
+              Esame cardine non invasivo che permette di visualizzare in tempo reale la contrattilità dei ventricoli, la frazione di eiezione e il funzionamento delle valvole (completato in casi mirati dall'<a href="/ecocardiografia-transesofagea">ecocardiografia transesofagea</a>).
             </li>
             <li>
-              <strong>Imaging Avanzato (TC Coronarica e RM Cardiaca)</strong>
-              La <em>TC coronarica</em> consente di studiare l'anatomia delle coronarie in modo non invasivo; la <em>Risonanza Magnetica Cardiaca</em> caratterizza in dettaglio il tessuto miocardico (fibrosi, ischemia, infiammazione).
+              <strong><a href="/holter-ecg">Holter ECG</a> e <a href="/holter-pressorio">Holter Pressorio</a> delle 24 ore</strong>
+              Monitoraggi dinamici ambulatoriali per intercettare aritmie parossistiche e misurare l'andamento reale della pressione arteriosa tra giorno e notte.
             </li>
             <li>
-              <strong>Test Provocativi, Holter ECG e Coronarografia</strong>
-              Indagini mirate per documentare l'ischemia inducibile, monitorare le aritmie nelle 24–48 ore o trattare direttamente le stenosi coronariche.
+              <strong>Imaging Avanzato, <a href="/studio-elettrofisiologico">SEF</a> e <a href="/coronarografia">Coronarografia</a></strong>
+              Dalla <em>TC coronarica</em> e <em>RM Cardiaca</em> fino allo studio elettrofisiologico per le aritmie e alla coronarografia (dal polso) per visualizzare e trattare le stenosi coronariche.
             </li>
           </ul>
         </div>
@@ -1932,7 +2228,7 @@
     // Evidenziazione sezione attiva nella barra di navigazione (scrollspy)
     (function() {
       var navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav .nav-link[href^="#"]'));
-      var sectionIds = ['cos-e', 'patologie', 'sintomi-diagnosi', 'prevenzione', 'faq'];
+      var sectionIds = ['cos-e', 'patologie', 'esami-dispositivi', 'sintomi-diagnosi', 'prevenzione', 'faq'];
       var sections = sectionIds.map(function(id) {
         return document.getElementById(id);
       }).filter(Boolean);
